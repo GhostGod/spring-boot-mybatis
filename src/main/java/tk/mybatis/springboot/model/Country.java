@@ -24,15 +24,19 @@
 
 package tk.mybatis.springboot.model;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Country extends BaseEntity {
     /**
      * 名称
      */
+	@NotEmpty
     private String countryname;
 
     /**
      * 代码
      */
+	@NotEmpty
     private String countrycode;
 
     /**
