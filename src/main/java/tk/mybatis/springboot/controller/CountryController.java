@@ -26,8 +26,11 @@ package tk.mybatis.springboot.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -103,6 +106,17 @@ public class CountryController {
 		for (Test test : countryService.test(0, 10)) {
 			result = result + ", " + test.toString();
 		}
+		return result;
+	}
+
+	@RequestMapping(value = "/testadd")
+	@ResponseBody
+	public String testadd(@Valid Country country,Errors errors) {
+		if(errors.hasErrors()){
+			return errors.toString();
+		}
+		String result = "";
+		countryService.save(country);
 		return result;
 	}
 }
