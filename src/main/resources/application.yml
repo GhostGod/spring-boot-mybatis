@@ -1,7 +1,8 @@
 server:
     port: 8080
     context-path: /
-
+#    tomcat:
+#        uri-encoding: UTF-8
 logging:
     level:
         tk.mybatis: DEBUG
@@ -42,7 +43,7 @@ spring:
         cache: false
         request-context-attribute: request
     redis:
-        host: 192.168.4.93
+        host: 192.168.4.92
 #		password: 
         port: 6379
 #		pool:

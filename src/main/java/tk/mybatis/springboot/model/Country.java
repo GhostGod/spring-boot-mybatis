@@ -24,55 +24,65 @@
 
 package tk.mybatis.springboot.model;
 
+import java.io.Serializable;
+
 import org.hibernate.validator.constraints.NotEmpty;
 
-public class Country extends BaseEntity {
-    /**
-     * 名称
-     */
+public class Country extends BaseEntity implements Serializable {
+	/** * */
+	private static final long serialVersionUID = -8306039445255003759L;
+
+	/**
+	 * 名称
+	 */
 	@NotEmpty
-    private String countryname;
+	private String countryname;
 
-    /**
-     * 代码
-     */
+	/**
+	 * 代码
+	 */
 	@NotEmpty
-    private String countrycode;
+	private String countrycode;
 
-    /**
-     * 获取名称
-     *
-     * @return countryname - 名称
-     */
-    public String getCountryname() {
-        return countryname;
-    }
+	/**
+	 * 获取名称
+	 *
+	 * @return countryname - 名称
+	 */
+	public String getCountryname() {
+		return countryname;
+	}
 
-    /**
-     * 设置名称
-     *
-     * @param countryname 名称
-     */
-    public void setCountryname(String countryname) {
-        this.countryname = countryname;
-    }
+	/**
+	 * 设置名称
+	 *
+	 * @param countryname 名称
+	 */
+	public void setCountryname(String countryname) {
+		this.countryname = countryname;
+	}
 
-    /**
-     * 获取代码
-     *
-     * @return countrycode - 代码
-     */
-    public String getCountrycode() {
-        return countrycode;
-    }
+	/**
+	 * 获取代码
+	 *
+	 * @return countrycode - 代码
+	 */
+	public String getCountrycode() {
+		return countrycode;
+	}
 
-    /**
-     * 设置代码
-     *
-     * @param countrycode 代码
-     */
-    public void setCountrycode(String countrycode) {
-        this.countrycode = countrycode;
-    }
+	/**
+	 * 设置代码
+	 *
+	 * @param countrycode 代码
+	 */
+	public void setCountrycode(String countrycode) {
+		this.countrycode = countrycode;
+	}
+
+	@Override
+	public String toString() {
+		return "Country [countryname=" + countryname + ", countrycode=" + countrycode + "]";
+	}
 
 }
