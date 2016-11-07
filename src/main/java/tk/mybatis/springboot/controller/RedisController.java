@@ -9,7 +9,12 @@ import org.springframework.web.bind.annotation.RestController;
 import tk.mybatis.springboot.model.Country;
 import tk.mybatis.springboot.service.CountryService;
 import tk.mybatis.springboot.service.RedisService;
-
+/**
+ * redis控制器
+ * @author liuyang
+ * @Email y_liu@hiersun.com | 745089707@qq.com
+ * @Date 2016年11月7日
+ */
 @RestController
 @RequestMapping("/redis")
 public class RedisController {

@@ -24,13 +24,5 @@ public class RedisConfig {
 		template.setValueSerializer(new JdkSerializationRedisSerializer());
 		return template;
 	}
-
-	public static void main(String[] args) {
-		JdkSerializationRedisSerializer jdk = new JdkSerializationRedisSerializer();
-		Country c = new Country();
-		c.setCountryname("北京");
-		byte[] a = jdk.serialize(c);
-		Country b = (Country) jdk.deserialize(a);
-		System.out.println(b.getCountryname());
-	}
+	
 }

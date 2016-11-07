@@ -24,18 +24,19 @@
 
 package tk.mybatis.springboot.controller;
 
-import com.github.pagehelper.PageInfo;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
+
 import tk.mybatis.springboot.model.UserInfo;
 import tk.mybatis.springboot.service.UserInfoService;
 
-import java.util.List;
+import com.github.pagehelper.PageInfo;
 
 /**
  * @author liuzh
@@ -61,7 +62,6 @@ public class UserInfoController {
 
     @RequestMapping(value = "/view/{id}")
     public UserInfo view(@PathVariable Integer id) {
-        ModelAndView result = new ModelAndView();
         UserInfo userInfo = userInfoService.getById(id);
         return userInfo;
     }

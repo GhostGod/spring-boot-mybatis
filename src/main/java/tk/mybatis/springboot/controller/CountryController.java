@@ -25,8 +25,11 @@
 package tk.mybatis.springboot.controller;
 
 import java.util.List;
+import java.util.Set;
 
+import javax.validation.ConstraintViolation;
 import javax.validation.Valid;
+import javax.validation.Validator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -49,11 +52,13 @@ import com.github.pagehelper.PageInfo;
  * @since 2015-12-19 11:10
  */
 @Controller
-@RequestMapping("/countries")
+@RequestMapping(value = "/countries", produces = "text/html;charset=UTF-8")
 public class CountryController {
 
 	@Autowired
 	private CountryService countryService;
+	@Autowired
+	private Validator validator;
 
 	@RequestMapping
 	public ModelAndView getAll(Country country) {
@@ -119,5 +124,20 @@ public class CountryController {
 		countryService.save(country);
 		return result;
 	}
-	
+
+	@RequestMapping(value = "/testv")
+	@ResponseBody
+	public String testvalidator(Country country) {
+		country.setCountrycode("110100");
+		Set<ConstraintViolation<Country>> set = validator.validate(country);
+		if (set.size() > 0) {
+			String result = country.toString() + ":";
+			for (ConstraintViolation<Country> c : set) {
+				result = result + c.getMessage() + ",";
+			}
+			return result;
+		} else {
+			return "ok";
+		}
+	}
 }
