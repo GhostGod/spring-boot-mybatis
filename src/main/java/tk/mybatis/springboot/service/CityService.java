@@ -24,15 +24,15 @@
 
 package tk.mybatis.springboot.service;
 
-import com.github.pagehelper.PageHelper;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tk.mybatis.springboot.mapper.CityMapper;
-import tk.mybatis.springboot.mapper.CountryMapper;
-import tk.mybatis.springboot.model.City;
-import tk.mybatis.springboot.model.Country;
 
-import java.util.List;
+import tk.mybatis.springboot.mapper.CityMapper;
+import tk.mybatis.springboot.model.City;
+
+import com.github.pagehelper.PageHelper;
 
 /**
  * @author liuzh
