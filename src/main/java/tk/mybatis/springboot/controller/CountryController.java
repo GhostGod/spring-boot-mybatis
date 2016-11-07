@@ -111,12 +111,13 @@ public class CountryController {
 
 	@RequestMapping(value = "/testadd")
 	@ResponseBody
-	public String testadd(@Valid Country country,Errors errors) {
-		if(errors.hasErrors()){
+	public String testadd(@Valid Country country, Errors errors) {
+		if (errors.hasErrors()) {
 			return errors.toString();
 		}
 		String result = "";
 		countryService.save(country);
 		return result;
 	}
+	
 }
