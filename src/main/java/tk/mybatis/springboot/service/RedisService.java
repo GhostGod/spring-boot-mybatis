@@ -6,7 +6,12 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
 import tk.mybatis.springboot.model.Country;
-
+/**
+ * 
+ * @author liuyang
+ * @Email y_liu@hiersun.com | 745089707@qq.com
+ * @Date 2016年11月8日
+ */
 @Service
 public class RedisService {
 

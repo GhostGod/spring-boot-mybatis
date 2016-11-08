@@ -10,7 +10,12 @@ import org.springframework.data.redis.serializer.JdkSerializationRedisSerializer
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import tk.mybatis.springboot.model.Country;
-
+/**
+ * redis配置
+ * @author liuyang
+ * @Email y_liu@hiersun.com | 745089707@qq.com
+ * @Date 2016年11月8日
+ */
 @Configuration
 public class RedisConfig {
 	@Autowired

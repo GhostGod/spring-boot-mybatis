@@ -1,39 +1,11 @@
-/*
- * The MIT License (MIT)
- *
- * Copyright (c) 2014-2016 abel533@gmail.com
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-
 package tk.mybatis.springboot.controller;
 
 import java.util.List;
-import java.util.Set;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Valid;
 import javax.validation.Validator;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -48,8 +20,10 @@ import tk.mybatis.springboot.vo.Test;
 import com.github.pagehelper.PageInfo;
 
 /**
- * @author liuzh
- * @since 2015-12-19 11:10
+ * 
+ * @author liuyang
+ * @Email y_liu@hiersun.com | 745089707@qq.com
+ * @Date 2016年11月8日
  */
 @Controller
 @RequestMapping(value = "/countries", produces = "text/html;charset=UTF-8")
@@ -114,30 +88,4 @@ public class CountryController {
 		return result;
 	}
 
-	@RequestMapping(value = "/testadd")
-	@ResponseBody
-	public String testadd(@Valid Country country, Errors errors) {
-		if (errors.hasErrors()) {
-			return errors.toString();
-		}
-		String result = "";
-		countryService.save(country);
-		return result;
-	}
-
-	@RequestMapping(value = "/testv")
-	@ResponseBody
-	public String testvalidator(Country country) {
-		country.setCountrycode("110100");
-		Set<ConstraintViolation<Country>> set = validator.validate(country);
-		if (set.size() > 0) {
-			String result = country.toString() + ":";
-			for (ConstraintViolation<Country> c : set) {
-				result = result + c.getMessage() + ",";
-			}
-			return result;
-		} else {
-			return "ok";
-		}
-	}
 }
