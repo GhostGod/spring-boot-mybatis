@@ -51,3 +51,6 @@ spring:
 #			min-idle=0
 #			max-active=8
 #			max-wait=-1
+dubbo:
+    ref:
+        url: dubbo://127.0.0.1:20880
