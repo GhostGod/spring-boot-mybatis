@@ -43,7 +43,10 @@ spring:
         cache: false
         request-context-attribute: request
     redis:
-        host: 192.168.4.92
+        master:
+            host: 127.0.0.1
+        slave:
+            host: 127.0.0.1
 #		password: 
         port: 6379
 #		pool:
@@ -51,6 +54,12 @@ spring:
 #			min-idle=0
 #			max-active=8
 #			max-wait=-1
+# redis config
+#spring.redis.master.host=127.0.0.1
+#spring.redis.master.port=6380
+
+#spring.redis.slave.host=127.0.0.1
+#spring.redis.slave.port=6381
 dubbo:
     ref:
         url: dubbo://127.0.0.1:20880
