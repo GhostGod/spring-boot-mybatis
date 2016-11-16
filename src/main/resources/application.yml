@@ -45,10 +45,12 @@ spring:
     redis:
         master:
             host: 127.0.0.1
+            port: 6379
         slave:
             host: 127.0.0.1
+            port: 6379
 #		password: 
-        port: 6379
+#       port: 6379
 #		pool:
 #			max-idle=8 # pool settings ...
 #			min-idle=0

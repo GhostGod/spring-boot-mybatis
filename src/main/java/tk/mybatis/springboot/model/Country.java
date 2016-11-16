@@ -29,6 +29,7 @@ import java.io.Serializable;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import tk.mybatis.springboot.validator.CheckCountry;
+
 @CheckCountry
 public class Country extends BaseEntity implements Serializable {
 	/** * */

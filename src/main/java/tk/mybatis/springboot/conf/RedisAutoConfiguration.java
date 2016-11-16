@@ -211,7 +211,8 @@ public class RedisAutoConfiguration {
 		}
 
 		@Bean
-		public StringRedisTemplate stringRedisTemplate(RedisConnectionFactory masterRedisConnectionFactory) throws UnknownHostException {
+		public StringRedisTemplate stringRedisTemplate(RedisConnectionFactory masterRedisConnectionFactory)
+				throws UnknownHostException {
 			StringRedisTemplate template = new StringRedisTemplate();
 			template.setConnectionFactory(masterRedisConnectionFactory);
 			return template;

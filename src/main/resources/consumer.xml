@@ -8,66 +8,8 @@
 	<!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
 	<dubbo:application name="api-consumer" />
 	<!-- dubbo接口去除注册中心，采用直连的方式 -->
-	<dubbo:registry address="N/A" />
-	<!-- 生成远程服务代理，可以和本地bean一样使用demoService -->
-	<dubbo:reference id="userService"
-		interface="com.hiersun.jewelry.api.user.service.UserService"
-		url="dubbo://127.0.0.1:20880/com.hiersun.jewelry.api.user.service.UserService" />
-	<dubbo:reference id="uploadService"
-		interface="com.hiersun.jewelry.api.uploadresource.service.AttachmentService"
-		url="dubbo://127.0.0.1:20880/com.hiersun.jewelry.api.uploadresource.service.AttachmentService" />
-	<dubbo:reference id="orderService"
-		interface="com.hiersun.jewelry.api.orderservice.service.OrderService"
-		url="dubbo://127.0.0.1:20880/com.hiersun.jewelry.api.orderservice.service.OrderService" />
-	<dubbo:reference id="keyWordService"
-		interface="com.hiersun.jewelry.api.homescreen.service.KeyWordService"
-		url="dubbo://127.0.0.1:20880/com.hiersun.jewelry.api.homescreen.service.KeyWordService" />
-	<dubbo:reference id="directGoodsService"
-		interface="com.hiersun.jewelry.api.direct.service.DirectGoodsService"
-		url="dubbo://127.0.0.1:20880/com.hiersun.jewelry.api.direct.service.DirectGoodsService" />
-	<dubbo:reference id="directGoodMessageService"
-		interface="com.hiersun.jewelry.api.direct.service.DirectGoodMessageService"
-		url="dubbo://127.0.0.1:20880/com.hiersun.jewelry.api.direct.service.DirectGoodMessageService" />
-	<dubbo:reference id="directOrderService"
-		interface="com.hiersun.jewelry.api.direct.service.DirectOrderService"
-		url="dubbo://127.0.0.1:20880/com.hiersun.jewelry.api.direct.service.DirectOrderService" />
-	<dubbo:reference id="expressInfoService"
-		interface="com.hiersun.jewelry.api.expressinfo.service.ExpressInfoService"
-		url="dubbo://127.0.0.1:20880/com.hiersun.jewelry.api.expressinfo.service.ExpressInfoService" />
-	<dubbo:reference id="memberCentreMessageService"
-		interface="com.hiersun.jewelry.api.user.service.MemberCentreMessageService"
-		url="dubbo://127.0.0.1:20880/com.hiersun.jewelry.api.user.service.MemberCentreMessageService" />
-	<dubbo:reference id="LogisticsTrackingInfoService"
-		interface="com.hiersun.jewelry.api.expressinfo.service.LogisticsTrackingInfoService"
-		url="dubbo://127.0.0.1:20880/com.hiersun.jewelry.api.expressinfo.service.LogisticsTrackingInfoService" />
-	<dubbo:reference id="sMSMessageService"
-		interface="com.hiersun.jewelry.api.ott.service.SMSMessageService"
-		url="dubbo://192.168.4.93:20883/com.hiersun.jewelry.api.ott.service.SMSMessageService" />
-	<dubbo:reference id="weixinPayService"
-		interface="com.hiersun.jewelry.api.ott.service.WeixinPayService"
-		url="dubbo://192.168.4.93:20883/com.hiersun.jewelry.api.ott.service.WeixinPayService" />
-	<dubbo:reference id="tripartiteService"
-		interface="com.hiersun.jewelry.api.service.TripartiteService"
-		url="dubbo://127.0.0.1:20880/com.hiersun.jewelry.api.service.TripartiteService" />
-
-	<!-- 新增 -->
-	<dubbo:reference id="goodsCollectService"
-		interface="com.hiersun.jewelry.api.direct.service.GoodsCollectService"
-		url="dubbo://127.0.0.1:20880/com.hiersun.jewelry.api.direct.service.GoodsCollectService" />
-
-	<dubbo:reference id="shareLogService"
-		interface="com.hiersun.jewelry.api.web.service.ShareLogService"
-		url="dubbo://127.0.0.1:20880/com.hiersun.jewelry.api.web.service.ShareLogService" />
-
-	<dubbo:reference id="transCheckedService"
-		interface="com.hiersun.jewelry.api.audit.service.TransCheckedService"
-		url="dubbo://127.0.0.1:20880/com.hiersun.jewelry.api.audit.service.TransCheckedService" />
-
-	<dubbo:reference id="goodsTypeService"
-		interface="com.hiersun.jewelry.api.direct.service.GoodsTypeService"
-		url="dubbo://127.0.0.1:20880/com.hiersun.jewelry.api.direct.service.GoodsTypeService" />
-	<dubbo:reference id="statisticsService"
-		interface="com.hiersun.jewelry.api.web.service.StatisticsService"
-		url="dubbo://127.0.0.1:20880/com.hiersun.jewelry.api.web.service.StatisticsService" />
+	<dubbo:registry address="N/A" protocol="zookeeper"/>
+	<!-- 生成远程服务代理，可以和本地bean一样使用demoService
+	<dubbo:reference id="smsService" interface="com.xxxx.SmsService"/> -->
 
 </beans>
