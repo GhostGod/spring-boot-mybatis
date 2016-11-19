@@ -139,13 +139,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-	<!-- Nexus私服 -->
-	<repositories>
-		<repository>
-			<id>jewel-public</id>
-			<name>jewel-public</name>
-			<url>http://192.168.4.92:8081/nexus/content/groups/jewel-public</url>
-		</repository>
-	</repositories>
 </project>
